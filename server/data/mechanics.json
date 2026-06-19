@@ -1,0 +1,97 @@
+[
+  {
+    "id": "m1",
+    "name": "TurboFix Garage",
+    "phone": "+91 98765 21001",
+    "speciality": "Battery jumpstart and roadside diagnostics",
+    "basePrice": 1200,
+    "pricing": {
+      "visit": 300,
+      "labor": 700,
+      "tow": 1800
+    },
+    "whyAffordable": "Independent mobile unit with low overhead and shared parts sourcing.",
+    "coords": {
+      "lat": 28.6181,
+      "lng": 77.2056
+    },
+    "seedDistanceKm": 1.2,
+    "verified": true
+  },
+  {
+    "id": "m2",
+    "name": "Amber Axle Assist",
+    "phone": "+91 98765 21002",
+    "speciality": "Flat tire replacement and wheel service",
+    "basePrice": 900,
+    "pricing": {
+      "visit": 250,
+      "labor": 550,
+      "tow": 1500
+    },
+    "whyAffordable": "Hyper-local workshop focused on quick-turn tire and puncture jobs.",
+    "coords": {
+      "lat": 28.6102,
+      "lng": 77.2161
+    },
+    "seedDistanceKm": 2.8,
+    "verified": true
+  },
+  {
+    "id": "m3",
+    "name": "Night Shift Mechanics",
+    "phone": "+91 98765 21003",
+    "speciality": "Late-night emergency repairs and starter issues",
+    "basePrice": 1700,
+    "pricing": {
+      "visit": 400,
+      "labor": 1100,
+      "tow": 2300
+    },
+    "whyAffordable": "Shared night dispatch team reduces idle travel and emergency premiums.",
+    "coords": {
+      "lat": 28.6228,
+      "lng": 77.2217
+    },
+    "seedDistanceKm": 4.3,
+    "verified": true
+  },
+  {
+    "id": "m4",
+    "name": "GreenLine Auto Aid",
+    "phone": "+91 98765 21004",
+    "speciality": "Fuel delivery and overheating support",
+    "basePrice": 1400,
+    "pricing": {
+      "visit": 300,
+      "labor": 850,
+      "tow": 1900
+    },
+    "whyAffordable": "Neighborhood-based routing keeps delivery and dispatch costs low.",
+    "coords": {
+      "lat": 28.6066,
+      "lng": 77.1982
+    },
+    "seedDistanceKm": 5.5,
+    "verified": true
+  },
+  {
+    "id": "m5",
+    "name": "Rapid Wrench Collective",
+    "phone": "+91 98765 21005",
+    "speciality": "Engine checks and multi-point roadside rescue",
+    "basePrice": 2600,
+    "pricing": {
+      "visit": 500,
+      "labor": 1700,
+      "tow": 2800
+    },
+    "whyAffordable": "Collective of certified freelancers sharing one dispatch channel.",
+    "coords": {
+      "lat": 28.6297,
+      "lng": 77.2144
+    },
+    "seedDistanceKm": 6.7,
+    "verified": true
+  }
+]

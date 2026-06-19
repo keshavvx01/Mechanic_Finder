@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  background: #121214;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top, rgba(255, 139, 43, 0.08), transparent 28%),
+    #121214;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.leaflet-container {
+  background: #0f1013;
+  font-family: inherit;
+}
+
+.leaflet-control-attribution {
+  background: rgba(12, 12, 14, 0.55) !important;
+  color: rgba(255, 255, 255, 0.5) !important;
+  backdrop-filter: blur(8px);
+}
+
+.leaflet-control-attribution a {
+  color: rgba(255, 179, 71, 0.85) !important;
+}
+
+.range-input {
+  width: 100%;
+  appearance: none;
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(255, 139, 43, 0.7), rgba(255, 179, 71, 0.18));
+  outline: none;
+}
+
+.range-input::-webkit-slider-thumb {
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background: #ff8b2b;
+  border: 3px solid rgba(18, 18, 20, 0.92);
+  box-shadow: 0 0 0 6px rgba(255, 139, 43, 0.16);
+}
+
+.range-input::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background: #ff8b2b;
+  border: 3px solid rgba(18, 18, 20, 0.92);
+  box-shadow: 0 0 0 6px rgba(255, 139, 43, 0.16);
+}
+
+.app-input {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  padding: 0.95rem 1rem;
+  outline: none;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.app-input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.app-input:focus {
+  border-color: rgba(255, 139, 43, 0.5);
+  box-shadow: 0 0 0 4px rgba(255, 139, 43, 0.14);
+}
+
+.user-location-icon,
+.mechanic-pin-wrapper {
+  background: transparent;
+  border: 0;
+}
+
+.user-marker {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+}
+
+.user-marker__ring {
+  position: absolute;
+  inset: 6px;
+  border-radius: 999px;
+  border: 2px solid rgba(255, 179, 71, 0.7);
+  animation: pulseRing 2.4s ease-out infinite;
+}
+
+.user-marker__ring--delay {
+  animation-delay: 0.8s;
+}
+
+.user-marker__dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #ffb347 0%, #ff8b2b 100%);
+  box-shadow:
+    0 0 0 8px rgba(255, 139, 43, 0.12),
+    0 8px 18px rgba(0, 0, 0, 0.38);
+}
+
+.mechanic-pin {
+  position: relative;
+  width: 96px;
+  height: 56px;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  transform-origin: center bottom;
+  animation: markerDrop 500ms cubic-bezier(0.18, 0.89, 0.32, 1.28) both;
+  transition: transform 180ms ease;
+  cursor: pointer;
+}
+
+.mechanic-pin:hover,
+.mechanic-pin:focus-visible,
+.mechanic-pin--selected {
+  transform: scale(1.06);
+}
+
+.mechanic-pin--exit {
+  animation: markerExit 240ms ease forwards;
+}
+
+.mechanic-pin__halo {
+  position: absolute;
+  left: 50%;
+  bottom: 2px;
+  width: 54px;
+  height: 16px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: rgba(255, 139, 43, 0.2);
+  filter: blur(8px);
+}
+
+.mechanic-pin__core {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 22px 22px 22px 6px;
+  background: linear-gradient(180deg, #ffb347 0%, #ff8b2b 100%);
+  box-shadow:
+    0 16px 28px rgba(0, 0, 0, 0.34),
+    0 0 0 1px rgba(255, 255, 255, 0.16) inset;
+}
+
+.mechanic-pin__price {
+  color: #17181c;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
