@@ -2,6 +2,8 @@ import cors from 'cors';
 import express from 'express';
 import mechanicsRoutes from './routes/mechanics.routes.js';
 import requestsRoutes from './routes/requests.routes.js';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const app = express();
 const allowedOrigins = process.env.CLIENT_ORIGIN
@@ -28,5 +30,14 @@ app.use((error, _request, response, _next) => {
     error: error.message || 'Internal server error',
   });
 });
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
+const distPath = path.resolve(__dirname, '../../dist');
+
+app.use(express.static(distPath));
+
+app.get('*', (_request, response) => {
+  response.sendFile(path.join(distPath, 'index.html'));
+});
 export { app };
