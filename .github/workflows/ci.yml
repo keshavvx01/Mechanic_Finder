@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build-and-push:
+  build-push-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -35,3 +35,21 @@ jobs:
 
       - name: Push Docker Image
         run: docker push keshavvx01/mechanic-finder:latest
+
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            docker pull keshavvx01/mechanic-finder:latest
+
+            docker stop mechanic-finder || true
+            docker rm mechanic-finder || true
+
+            docker run -d \
+              --name mechanic-finder \
+              --restart unless-stopped \
+              -p 3001:3001 \
+              keshavvx01/mechanic-finder:latest

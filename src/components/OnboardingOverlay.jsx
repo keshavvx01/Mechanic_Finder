@@ -20,7 +20,7 @@ export function OnboardingOverlay({ onEnter, locationState }) {
         >
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs uppercase tracking-[0.3em] text-primaryGlow">
             <Radar size={14} />
-            PitStop Pulse
+            Mechanic Finder
           </div>
 
           <div className="space-y-4">

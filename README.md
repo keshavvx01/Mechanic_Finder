@@ -1,4 +1,4 @@
-# PitStop Pulse
+# Mechanic Finder
 
 Full-stack roadside assistance app built with React, Vite, Tailwind CSS, Framer Motion, React Leaflet, and an Express backend.
 
