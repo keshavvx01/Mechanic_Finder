@@ -1,74 +1,150 @@
-# Mechanic Finder
+# 🚗 Mechanic Finder
 
-Full-stack roadside assistance app built with React, Vite, Tailwind CSS, Framer Motion, React Leaflet, and an Express backend.
+A full-stack roadside assistance platform that helps users quickly locate nearby mechanics and request emergency vehicle assistance.
 
-## What is included
+## Live Demo
 
-- Driver experience with animated onboarding, live geolocation, a dark Leaflet map, dynamic mechanic filters, and an assistance request flow.
-- Mechanic onboarding view so new mechanics can publish themselves into the live nearby feed.
-- Backend API with persistent JSON storage for mechanics and assistance requests.
+**Application:** http://3.111.47.86
 
-## Local development
+## GitHub Repository
 
-1. Install dependencies:
+https://github.com/keshavvx01/Mechanic_Finder
 
-```bash
-npm install
+---
+
+## Features
+
+- Find nearby mechanics
+- Mechanic registration
+- Roadside assistance requests
+- Responsive React frontend
+- Express.js REST API
+- Dockerized deployment
+- Nginx Reverse Proxy
+- AWS EC2 Hosting
+- GitHub Actions CI/CD
+- Terraform Infrastructure as Code
+- Prometheus Monitoring
+- Node Exporter Metrics
+
+---
+
+## Tech Stack
+
+### Frontend
+- React
+- Vite
+- Tailwind CSS
+- Leaflet Maps
+
+### Backend
+- Node.js
+- Express.js
+
+### DevOps
+- Docker
+- Docker Compose
+- AWS EC2
+- Nginx
+- GitHub Actions
+- Terraform
+- Amazon S3 (Terraform Backend)
+- DynamoDB (Terraform State Locking)
+- Prometheus
+- Node Exporter
+
+---
+
+## Project Architecture
+
+```
+                    GitHub
+                       │
+                       ▼
+              GitHub Actions CI/CD
+                       │
+                       ▼
+                 Docker Image Build
+                       │
+                       ▼
+                 AWS EC2 (Mumbai)
+                       │
+             Nginx Reverse Proxy
+                       │
+             Mechanic Finder App
+                       │
+      ┌────────────────┴──────────────┐
+      │                               │
+Node Exporter (:9100)      Prometheus (:9090)
 ```
 
-2. Run both the API and frontend together:
+---
+
+## Infrastructure
+
+- AWS EC2 (Mumbai Region)
+- Docker Container
+- Nginx Reverse Proxy
+- Terraform Infrastructure
+- Remote Terraform State using Amazon S3
+- Terraform State Locking using DynamoDB
+
+---
+
+## Deployment
 
 ```bash
-npm run dev
+git clone https://github.com/keshavvx01/Mechanic_Finder.git
+
+cd Mechanic_Finder
+
+docker-compose up -d
 ```
 
-3. Open the Vite app URL shown in the terminal. The frontend proxies `/api` calls to `http://localhost:3001`.
+---
 
-## Scripts
+## Terraform
 
-- `npm run dev`: runs the client and API together.
-- `npm run dev:client`: runs the Vite frontend.
-- `npm run dev:server`: runs the Express API with file watching.
-- `npm run build`: builds the frontend.
-- `npm run start`: starts the API server.
+```bash
+cd terraform
 
-## API overview
+terraform init
 
-- `GET /api/health`
-- `GET /api/mechanics?lat=..&lng=..&distanceKm=..&maxBudget=..`
-- `POST /api/mechanics/register`
-- `GET /api/assistance-requests`
-- `GET /api/assistance-requests/:id`
-- `POST /api/assistance-requests`
-- `PATCH /api/assistance-requests/:id/status`
+terraform plan
 
-## Environment notes
+terraform apply
+```
 
-- `PORT`: API server port. Defaults to `3001`.
-- `CLIENT_ORIGIN`: optional comma-separated CORS allowlist for deployed frontends.
-- `VITE_API_BASE_URL`: optional frontend API base override for production deployments. Defaults to `/api`.
+---
 
-## Frontend structure
+## Monitoring
 
-- `src/App.jsx`: orchestrates driver mode, mechanic mode, overlays, and backend-fed state.
-- `src/components/LiveMap.jsx`: dark-mode Leaflet map, user pulse marker, and animated mechanic pins.
-- `src/components/ServiceRequestSheet.jsx`: rescue request submission flow.
-- `src/components/MechanicRegistrationPanel.jsx`: mechanic publishing flow.
-- `src/components/RoleDock.jsx`: driver/mechanic mode switcher.
+Prometheus collects infrastructure metrics from Node Exporter.
 
-## Backend structure
+Services monitored:
 
-- `server/src/app.js`: Express app and middleware.
-- `server/src/routes/*.routes.js`: API route modules.
-- `server/src/services/*.service.js`: mechanics and assistance request business logic.
-- `server/data/*.json`: lightweight persistent storage for local development and simple deployments.
+- CPU Usage
+- Memory Usage
+- Disk Usage
+- Network Statistics
+- Filesystem Usage
 
-## Tailwind notes
+---
 
-- `tailwind.config.js` extends the cyber-garage palette, glow shadows, and keyframed marker animations.
-- `src/styles.css` contains Leaflet theming, slider styling, input skins, and custom map marker visuals.
+## Project Status
 
-## Free map layer
+- Full Stack Application
+- Production Deployment
+- CI/CD Pipeline
+- Infrastructure as Code
+- Monitoring Enabled
 
-The map uses CARTO's `dark_all` tiles with OpenStreetMap data, which stays free and aligns with the premium dark-mode visual direction.
-# Mechanic_Finder
+---
+
+## Author
+
+**Keshav**
+
+B.Tech CSE (AI)
+
+DevOps & Cloud Enthusiast
