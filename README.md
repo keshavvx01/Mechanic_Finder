@@ -9,7 +9,7 @@ The project demonstrates modern full-stack development, cloud deployment, revers
 ## 🌐 Live Demo
 
 **Application:**  
-http://3.111.47.86
+http://51.20.171.255/
 
 ---
 
