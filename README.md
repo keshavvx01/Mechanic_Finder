@@ -1,109 +1,172 @@
 # 🚗 Mechanic Finder
 
-A full-stack roadside assistance platform that helps users quickly locate nearby mechanics and request emergency vehicle assistance.
+A production-style full-stack roadside assistance platform that helps users quickly locate nearby mechanics and request emergency vehicle assistance.
 
-## Live Demo
+The project demonstrates modern full-stack development, cloud deployment, reverse proxy configuration, infrastructure monitoring, and observability using AWS and Prometheus.
 
-**Application:** http://3.111.47.86
+---
 
-## GitHub Repository
+## 🌐 Live Demo
+
+**Application:**  
+http://3.111.47.86
+
+---
+
+## 📂 GitHub Repository
 
 https://github.com/keshavvx01/Mechanic_Finder
 
 ---
 
-## Features
+# ✨ Features
 
-- Find nearby mechanics
-- Mechanic registration
-- Roadside assistance requests
-- Responsive React frontend
-- Express.js REST API
-- Dockerized deployment
-- Nginx Reverse Proxy
-- AWS EC2 Hosting
-- GitHub Actions CI/CD
-- Terraform Infrastructure as Code
-- Prometheus Monitoring
-- Node Exporter Metrics
+- 🔍 Find nearby mechanics
+- 🛠️ Mechanic registration
+- 🚨 Roadside assistance requests
+- 📍 Interactive map integration
+- 📱 Responsive React frontend
+- ⚡ Express.js REST API
+- 🐳 Dockerized deployment
+- 🌐 Nginx Reverse Proxy
+- ☁️ AWS EC2 deployment
+- ❤️ Health Check endpoint
+- 📊 Infrastructure Monitoring
+- 📈 Live Metrics Dashboard
 
 ---
 
-## Tech Stack
+# 🛠 Tech Stack
 
-### Frontend
+## Frontend
+
 - React
 - Vite
 - Tailwind CSS
 - Leaflet Maps
 
-### Backend
+## Backend
+
 - Node.js
 - Express.js
 
-### DevOps
+## DevOps & Cloud
+
 - Docker
 - Docker Compose
 - AWS EC2
 - Nginx
-- GitHub Actions
-- Terraform
-- Amazon S3 (Terraform Backend)
-- DynamoDB (Terraform State Locking)
 - Prometheus
 - Node Exporter
+- Grafana
+- Amazon CloudWatch
+- Amazon SNS
+- Terraform (Remote State Backend)
 
 ---
 
-## Project Architecture
+# 🏗 System Architecture
 
+```text
+                    Internet
+                        │
+                        ▼
+          Application Load Balancer
+                        │
+                        ▼
+                 AWS EC2 (Ubuntu)
+        ┌───────────────────────────────┐
+        │        Nginx                  │
+        │                               │
+        │  React Frontend               │
+        │  Express Backend              │
+        │                               │
+        │  Node Exporter                │
+        │  Prometheus                   │
+        │  Grafana                      │
+        └───────────────────────────────┘
 ```
-                    GitHub
-                       │
-                       ▼
-              GitHub Actions CI/CD
-                       │
-                       ▼
-                 Docker Image Build
-                       │
-                       ▼
-                 AWS EC2 (Mumbai)
-                       │
-             Nginx Reverse Proxy
-                       │
-             Mechanic Finder App
-                       │
-      ┌────────────────┴──────────────┐
-      │                               │
-Node Exporter (:9100)      Prometheus (:9090)
+
+---
+
+# 📊 Monitoring Architecture
+
+```text
+            Node Exporter
+                  │
+                  ▼
+             Prometheus
+                  │
+                  ▼
+               Grafana
+
+                     +
+
+             AWS CloudWatch
+                    │
+                    ▼
+             CloudWatch Alarm
+                    │
+                    ▼
+                Amazon SNS
 ```
 
 ---
 
-## Infrastructure
+# ☁ AWS Services Used
 
-- AWS EC2 (Mumbai Region)
-- Docker Container
-- Nginx Reverse Proxy
-- Terraform Infrastructure
-- Remote Terraform State using Amazon S3
-- Terraform State Locking using DynamoDB
+- Amazon EC2
+- Application Load Balancer
+- Target Group
+- Security Groups
+- Amazon CloudWatch
+- CloudWatch Alarms
+- Amazon SNS
+- IAM
+- Amazon S3 (Terraform Remote State)
+- DynamoDB (Terraform State Locking)
 
 ---
 
-## Deployment
+# 📈 Monitoring & Observability
+
+Infrastructure monitoring is implemented using **Prometheus**, **Node Exporter**, and **Grafana**.
+
+### Metrics Collected
+
+- CPU Utilization
+- Memory Usage
+- Disk Usage
+- Filesystem Usage
+- Network Traffic
+- Load Average
+- System Uptime
+
+AWS CloudWatch is used for infrastructure monitoring, while Amazon SNS provides email notifications for CloudWatch alarms.
+
+---
+
+# 🚀 Deployment
+
+Clone the repository
 
 ```bash
 git clone https://github.com/keshavvx01/Mechanic_Finder.git
 
 cd Mechanic_Finder
+```
 
+Run using Docker
+
+```bash
 docker-compose up -d
 ```
 
 ---
 
-## Terraform
+# ⚙ Terraform
+
+Terraform is configured with a **remote backend** for state management.
 
 ```bash
 cd terraform
@@ -115,36 +178,68 @@ terraform plan
 terraform apply
 ```
 
----
+Remote backend:
 
-## Monitoring
-
-Prometheus collects infrastructure metrics from Node Exporter.
-
-Services monitored:
-
-- CPU Usage
-- Memory Usage
-- Disk Usage
-- Network Statistics
-- Filesystem Usage
+- Amazon S3
+- DynamoDB State Locking
 
 ---
 
-## Project Status
+# 📂 Project Structure
 
-- Full Stack Application
-- Production Deployment
-- CI/CD Pipeline
-- Infrastructure as Code
-- Monitoring Enabled
+```
+Mechanic_Finder/
+│
+├── frontend/
+├── backend/
+├── nginx/
+├── terraform/
+├── docker-compose.yml
+├── README.md
+└── .github/
+```
 
 ---
 
-## Author
+# 📷 Screenshots
+
+- Application Homepage
+- AWS EC2
+- Application Load Balancer
+- CloudWatch Dashboard
+- Grafana Dashboard
+- Prometheus Targets
+
+---
+
+# 🚀 Future Improvements
+
+- HTTPS using SSL/TLS
+- Kubernetes Deployment
+- Auto Scaling
+- CI/CD Deployment Automation
+- Application Metrics using Prometheus
+- Centralized Logging
+
+---
+
+# 📄 Project Status
+
+- ✅ Full Stack Application
+- ✅ Production Deployment
+- ✅ Dockerized
+- ✅ AWS Hosted
+- ✅ Reverse Proxy Configured
+- ✅ Monitoring Enabled
+- ✅ Observability Dashboard
+- ✅ Cloud Monitoring
+
+---
+
+# 👨‍💻 Author
 
 **Keshav**
 
 B.Tech CSE (AI)
 
-DevOps & Cloud Enthusiast
+DevOps • Cloud Computing • Full Stack Development
